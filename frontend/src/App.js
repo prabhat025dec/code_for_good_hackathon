@@ -5,6 +5,8 @@ import { Contact } from "./pages/Contact";
 import ReportPage from "./pages/ReportPage";
 import NavBar from "./components/Navbar";
 import NGODataRegistration from "./pages/NGODataRegistration"
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
             <Route path="/report" element={<ReportPage></ReportPage>} />
             <Route path="/contact" element={<Contact></Contact>} />
             <Route path="/form" element = {<NGODataRegistration></NGODataRegistration>}/>
+            <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/register" element = {<Register></Register>}></Route> 
+            
           </Routes>
         </div>
       </Router>
