@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
-
+const ngoDataRegistrationRouter = require("../backend/routes/ngoDataRegister-routes");
 const adminLoginRouter = require("./routes/adminLogin");
 
 require("dotenv").config();
@@ -29,8 +29,10 @@ mongoose
   .catch((err) => console.log(err));
 
 //all routes
-app.use("/", adminLoginRouter);
+// app.use("/", adminLoginRouter);
 
+
+app.use("/ngo", ngoDataRegistrationRouter);
 app.listen(PORT, () => {
   console.log(`Server is running at PORT ${PORT}.`);
 });
