@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 
-const registerRouter = require("./routes/register");
-const loginRouter = require("./routes/login");
-const forgetRouter = require("./routes/forget");
+const adminLoginRouter = require("./routes/adminLogin");
 
 require("dotenv").config();
 
@@ -31,9 +29,7 @@ mongoose
   .catch((err) => console.log(err));
 
 //all routes
-app.use("/", loginRouter);
-app.use("/", registerRouter);
-app.use("/", forgetRouter);
+app.use("/", adminLoginRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running at PORT ${PORT}.`);
