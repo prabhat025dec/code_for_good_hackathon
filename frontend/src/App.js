@@ -1,10 +1,10 @@
 import './App.css';
-import Form from "./components/Register"
+import NGODataRegistration from './pages/NGODataRegistration';
  
 function App() {
   return (
     <div className="App">
-      <Form />
+      <NGODataRegistration />
     </div>
      
   );
