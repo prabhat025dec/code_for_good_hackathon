@@ -1,0 +1,31 @@
+USER :
+register :
+1. http://localhost:5000/register  -- post request
+{
+  "userName" : "Sunil Kumhar",
+  "userEmail" : "sunilkumahr1@gmail.com",
+  "userPhone" : 7378577964,
+  "userPassword" : "sunil",
+  "userImage" : uplaod image,
+  "userSecurityQuestion" : "What is my fav num ?",
+  "userSecurityQuestionAns" : "7",
+  "userType" : "admin",
+  "userAddress" : "mumbai"
+}
+
+2. http://localhost:5000/alladmin  -- get alladmin
+3. http://localhost:5000/allngo  -- get allngo
+4. http://localhost:5000/629b3e289c9865f042223ff8/update  -- put request to update admin or ngo
+
+login : 
+1. http://localhost:5000/admin/login -- post request
+{
+  "userPhone" : "7378577964", Or "userEmail" : "sunilkumahr1@gmail.com",
+  "userPassword" : "sunil02"
+}
+
+2. http://localhost:5000/ngo/login -- post request
+{
+  "userPhone" : "7378577964", Or "userEmail" : "sunilkumahr1@gmail.com",
+  "userPassword" : "sunil02"
+}
