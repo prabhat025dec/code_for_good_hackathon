@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import NGODataRegistration from './pages/NGODataRegistration';
+import Form from "./components/Register"
+ 
 function App() {
   return (
     <div className="App">
-      
-        <NGODataRegistration />
-      
+      <Form />
     </div>
+     
   );
 }
-
+ 
 export default App;
