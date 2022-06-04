@@ -34,6 +34,18 @@ const addNgoRegistration = async (req, res) => {
       foodDistributedToAnyOtherCharity,
       programDate,
     });
+    let ngosdata = await NgoDataRegistration.find({
+      locationCovered: newNgoData.locationCovered,
+      supportProvidedMonth: newNgoData.supportProvidedMonth,
+      numberOfBeneficiariesReached: newNgoData.numberOfBeneficiariesReached,
+      programDate: newNgoData.programDate,
+      representerName: newNgoData.representerName,
+      representerDesignation: newNgoData.representerDesignation,
+      enrolledProgram: newNgoData.enrolledProgram,
+    });
+    if (ngosdata.length) {
+      return res.status(406).json({ message: "Duplicate Data Found" });
+    }
     await newNgoData.save();
   } catch (err) {
     console.log(err);
@@ -71,6 +83,16 @@ const getNgoData = async (req, res) => {
     return res.status(404).json({ message: "No Ngo found" });
   }
   return res.status(200).json({ ngodata });
+};
+
+const getAllNgosSingleData = async (req, res) => {
+  let data = req.params.data;
+  let users = await NgoDataRegistration.find();
+  var adminUsers = [];
+  for (var i = 0; i < users.length; i++) {
+    adminUsers.push(users[i].data);
+  }
+  res.send(adminUsers);
 };
 
 const updateNgoData = async (req, res, next) => {
@@ -112,7 +134,7 @@ const updateNgoData = async (req, res, next) => {
   if (!ngodata) {
     return res.status(404).json({ message: "Unable To Update Ngo Data" });
   }
-  return res.status(200).json({message:"Ngo Data Updated Successfully"});
+  return res.status(200).json({ message: "Ngo Data Updated Successfully" });
 };
 
 const deleteNgoData = async (req, res) => {
@@ -134,3 +156,4 @@ exports.getAllNgosData = getAllNgosData;
 exports.getNgoData = getNgoData;
 exports.deleteNgoData = deleteNgoData;
 exports.updateNgoData = updateNgoData;
+exports.getAllNgosSingleData = getAllNgosSingleData;
