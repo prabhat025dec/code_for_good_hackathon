@@ -18,7 +18,7 @@ const ngoDataRegistrationSchema = new mongoose.Schema({
     required: true,
   },
   registeredId: {
-    type: Number,
+    type: String,
     required: true,
   },
   supportProvidedMonth: {
@@ -26,18 +26,15 @@ const ngoDataRegistrationSchema = new mongoose.Schema({
     required: true,
   },
   foodAmount: {
-    type: Number,
+    type: String,
     required: true,
   },
-  ageGroup: [
-    {
-      under18: { type: Number, required: true },
-      above60: { type: Number, required: true },
-      femaleBeneficiariesReached: { type: Number, required: true },
-    },
-  ],
+  under18: { type: String, required: true },
+  above60: { type: String, required: true },
+  femaleBeneficiariesReached: { type: String, required: true },
+
   numberOfBeneficiariesReached: {
-    type: Number,
+    type: String,
     required: true,
   },
   locationCovered: {
