@@ -58,6 +58,7 @@ userSchema.methods.generateAuthToken = function () {
     {
       _id: this._id,
       name: this.userName,
+      type: this.userType,
     },
     process.env._jwtprivate
   );

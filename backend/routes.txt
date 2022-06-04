@@ -15,6 +15,7 @@ register :
 
 2. http://localhost:5000/alladmin  -- get alladmin
 3. http://localhost:5000/allngo  -- get allngo
+4. http://localhost:5000/629b3e289c9865f042223ff8/update  -- put request to update admin or ngo
 
 login : 
 1. http://localhost:5000/admin/login -- post request
