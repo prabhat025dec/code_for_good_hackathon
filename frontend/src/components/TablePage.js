@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBTable, MDBTableBody, MDBTableHead ,MDBDataTable} from 'mdbreact';
+import ReactTable from 'react-table';
 
 const TablePage = (props) => {
   const data_people = {
@@ -136,6 +136,7 @@ const TablePage = (props) => {
    },
    
    {
+    
        organization_name: "NGO2",
        enrolled_program: "Breakfast Feeding Program",
        representator_name: "repre1",
@@ -156,11 +157,13 @@ const TablePage = (props) => {
 
   return(
 
-    <MDBTable fixed bordered>
-      <MDBTableHead columns={data_people.columns} />
-      <MDBTableBody rows={data_people.rows} />
-    </MDBTable>
+    <ReactTable
+    data={data_people.rows}
+    columns={data_people.columns}
+    className="-striped -highlight"
+    defaultPageSize={7}
+   
+  />
   );
-};
-
+  }
 export default TablePage;
