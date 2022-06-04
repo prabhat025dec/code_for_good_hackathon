@@ -1,4 +1,4 @@
-import "./App.css";
+
 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { Home } from "./pages/Home";
@@ -7,6 +7,8 @@ import { Contact } from "./pages/Contact";
 import ReportPage from "./pages/ReportPage";
 import NavBar from "./components/Navbar";
 import NGODataRegistration from "./pages/NGODataRegistration";
+
+
 
 function App() {
 
@@ -30,5 +32,7 @@ function App() {
     </>
   );
 }
+
+    
 
 export default App;
