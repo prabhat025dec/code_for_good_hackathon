@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
 import '../style/report.css'
 import {Table} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import { Button} from 'react-bootstrap'
+
 
 const data = [
     {
@@ -86,10 +88,60 @@ const data = [
   ]
 
 class TableView extends Component {
+  // navigate = useNavigate(); 
+  // routeChange = () =>{ 
+  //   let path = `/form`; 
+  //   navigate(path);
+  // }
   render() {
     return (
       <div>
-  <Table responsive style={{margin: '20px'}}>
+        <Table responsive="sm">
+        <thead>
+    <tr>
+          <th>Organization Name</th>
+          <th>Enrolled Program</th>
+          <th>Representator Name</th>
+          <th>Representator Designcation</th>
+          <th>Supported Provided Month</th>
+          <th>Food Received in kg</th>
+          <th>Number of Beneficiaries Under age 18</th>
+          <th>Number of Beneficiaries Over age 60</th>
+          <th>Number of female Beneficiaries</th>
+          <th>Total Beneficiaries</th>
+          <th>Location Covered</th>
+          <th>Food Distributed Charity Partner</th>
+        </tr>
+    </thead>
+    <tbody>
+      {data.map((val, key) => {
+          return (
+            <tr key={key}>
+              <td>{val.organization_name}</td>
+              <td>{val.enrolled_program}</td>
+              <td>{val.representator_name}</td>
+              <td>{val.representer_design}</td>
+              <td>{val.month}</td>
+              <td>{val.amount_food}</td>
+              <td>{val.beneficiaries_18}</td>
+              <td>{val.beneficiaries_60}</td>
+              <td>{val.beneficiaries_female}</td>
+              <td>{val.total_beneficiaries}</td>
+              <td>{val.location}</td>
+              <td>{val.food_distributed}</td>
+              <td> <>
+              {/* <Button variant="outline-success" style={{margin: '10px'}} onClick = {this.routeChange}>Edit</Button>{' '} */}
+              <Link to="/form" className="btn btn-primary">Edit</Link>
+              </></td>
+            
+             
+              
+            </tr>
+          )
+        })}
+    </tbody>
+</Table>
+  {/* <Table responsive style={{margin: '20px'}}>
     <thead>
     <tr>
           <th>Organization Name</th>
@@ -133,7 +185,7 @@ class TableView extends Component {
           )
         })}
     </tbody>
-  </Table>
+  </Table> */}
   
 </div>
       
@@ -141,110 +193,5 @@ class TableView extends Component {
   }
 }
   
-// function TableView() {
-//   return (
-//     <div>
-//       {/* <table>
-//         <tr>
-//           <th>Organization Name</th>
-//           <th>Enrolled Program</th>
-//           <th>Representator Name</th>
-//           <th>Representator Designcation</th>
-//           <th>Supported Provided Month</th>
-//           <th>Food Received in kg</th>
-//           <th>Number of Beneficiaries Under age 18</th>
-//           <th>Number of Beneficiaries Over age 60</th>
-//           <th>Number of female Beneficiaries</th>
-//           <th>Total Beneficiaries</th>
-//           <th>Location Covered</th>
-//           <th>Food Distributed Charity Partner</th>
-//         </tr>
-//         {data.map((val, key) => {
-//           return (
-//             <tr key={key}>
-//               <td>{val.organization_name}</td>
-//               <td>{val.enrolled_program}</td>
-//               <td>{val.representator_name}</td>
-//               <td>{val.representer_design}</td>
-//               <td>{val.month}</td>
-//               <td>{val.amount_food}</td>
-//               <td>{val.beneficiaries_18}</td>
-//               <td>{val.beneficiaries_60}</td>
-//               <td>{val.total_beneficiaries}</td>
-//               <td>{val.location}</td>
-//               <td>{val.food_distributed}</td>
-//             </tr>
-//           )
-//         })}
-//       </table> */}
-
-//       <div>
-//   <Table responsive>
-//     <thead>
-//     <tr>
-//           <th>Organization Name</th>
-//           <th>Enrolled Program</th>
-//           <th>Representator Name</th>
-//           <th>Representator Designcation</th>
-//           <th>Supported Provided Month</th>
-//           <th>Food Received in kg</th>
-//           <th>Number of Beneficiaries Under age 18</th>
-//           <th>Number of Beneficiaries Over age 60</th>
-//           <th>Number of female Beneficiaries</th>
-//           <th>Total Beneficiaries</th>
-//           <th>Location Covered</th>
-//           <th>Food Distributed Charity Partner</th>
-//         </tr>
-//     </thead>
-//     <tbody>
-//       {/* <tr>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//       </tr>
-//       <tr>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//       </tr>
-//       <tr>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//         <td>Table cell</td>
-//       </tr> */}
-//       {data.map((val, key) => {
-//           return (
-//             <tr key={key}>
-//               <td>{val.organization_name}</td>
-//               <td>{val.enrolled_program}</td>
-//               <td>{val.representator_name}</td>
-//               <td>{val.representer_design}</td>
-//               <td>{val.month}</td>
-//               <td>{val.amount_food}</td>
-//               <td>{val.beneficiaries_18}</td>
-//               <td>{val.beneficiaries_60}</td>
-//               <td>{val.beneficiaries_female}</td>
-//               <td>{val.total_beneficiaries}</td>
-//               <td>{val.location}</td>
-//               <td>{val.food_distributed}</td>
-//             </tr>
-//           )
-//         })}
-//     </tbody>
-//   </Table>
-  
-// </div>
-//     </div>
-//   )
-// }
 
 export default TableView
