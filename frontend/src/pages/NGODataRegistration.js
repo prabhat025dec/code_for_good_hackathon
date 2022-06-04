@@ -61,9 +61,9 @@ function NGODataRegistration(){
     <input onChange={handleChange} type="number" name = " foodAmount" className="form-control" placeholder = "Enter amount of food received(in kg)"required />
   </div>
  
-  <div class = "mb-3">
+  <div class = "mb-2">
 <div class = "row">
-<h5 class = "mb-6" style={{color: 'black'}}>Age group</h5>
+{/* <h5 class = "mb-2" style={{color: 'black'}}>Age group</h5> */}
     <div class = "col-md-4">
     <label className="form-label">Number of Beneficiaries under 18</label>
     <input onChange={handleChange} type="number" name = "under18" placeholder="Enter Number of Beneficiaries Under 18" className="form-control" required />
