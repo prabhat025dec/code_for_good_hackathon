@@ -1,7 +1,7 @@
 const NgoDataRegistration = require("../models/NgoDataRegistration");
 
 // Creating new Ngo Data R
-const addNgoRegistration = async (req, res) => {
+exports.addNgoRegistration = async (req, res) => {
   const {
     organizationName,
     enrolledProgram,
@@ -57,7 +57,7 @@ const addNgoRegistration = async (req, res) => {
   return res.status(201).json({ newNgoData });
 };
 
-const getAllNgosData = async (req, res) => {
+exports.getAllNgosData = async (req, res) => {
   let ngosdata;
   try {
     ngosdata = await NgoDataRegistration.find();
@@ -71,7 +71,7 @@ const getAllNgosData = async (req, res) => {
   return res.status(200).json({ ngosdata });
 };
 
-const getNgoData = async (req, res) => {
+exports.getNgoData = async (req, res) => {
   const id = req.params.id;
   let ngodata;
   try {
@@ -85,17 +85,7 @@ const getNgoData = async (req, res) => {
   return res.status(200).json({ ngodata });
 };
 
-const getAllNgosSingleData = async (req, res) => {
-  let data = req.params.data;
-  let users = await NgoDataRegistration.find();
-  var adminUsers = [];
-  for (var i = 0; i < users.length; i++) {
-    adminUsers.push(users[i].data);
-  }
-  res.send(adminUsers);
-};
-
-const updateNgoData = async (req, res, next) => {
+exports.updateNgoData = async (req, res, next) => {
   const id = req.params.id;
   const {
     organizationName,
@@ -137,11 +127,11 @@ const updateNgoData = async (req, res, next) => {
   return res.status(200).json({ message: "Ngo Data Updated Successfully" });
 };
 
-const deleteNgoData = async (req, res) => {
+exports.deleteNgoData = async (req, res) => {
   const id = req.params.id;
   let ngodata;
   try {
-    ngodata = await Book.findByIdAndRemove(id);
+    ngodata = await NgoDataRegistration.findByIdAndRemove(id);
   } catch (err) {
     console.log(err);
   }
@@ -150,10 +140,3 @@ const deleteNgoData = async (req, res) => {
   }
   return res.status(200).json({ message: "Ngo Data Successfully Deleted" });
 };
-
-exports.addNgoRegistration = addNgoRegistration;
-exports.getAllNgosData = getAllNgosData;
-exports.getNgoData = getNgoData;
-exports.deleteNgoData = deleteNgoData;
-exports.updateNgoData = updateNgoData;
-exports.getAllNgosSingleData = getAllNgosSingleData;

@@ -7,5 +7,4 @@ router.get("/getAllNgos", ngoDataRegistrationController.getAllNgosData);
 router.get("/getNgoData/:id", ngoDataRegistrationController.getNgoData);
 router.put('/updateNgoData/:id', ngoDataRegistrationController.updateNgoData);
 router.delete('/deleteNgoData/:id', ngoDataRegistrationController.deleteNgoData);
-router.get("/getAllNgos/:data", ngoDataRegistrationController.getAllNgosSingleData);
 module.exports = router;
