@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./NGODataRegistrationStyles.css"
+import "../style/NGODataRegistrationStyles.css"
 import axios from "../axios";
 function NGODataRegistration(){
     let initVals = {
