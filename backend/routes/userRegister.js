@@ -49,6 +49,7 @@ router
   .post("/:type/register", upload.single("userImage"), UsersController.register)
   .get("/alladmin", UsersController.alladmin)
   .get("/allngo", UsersController.allngo)
-  .put("/:id/update", auth, upload.single("userImage"), UsersController.update);
+  .put("/:id/update", auth, upload.single("userImage"), UsersController.update)
+  .delete("/:id/delete", auth, UsersController.delete);
 
 module.exports = router;
