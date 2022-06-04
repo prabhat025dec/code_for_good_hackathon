@@ -1,7 +1,8 @@
-import React from "react";
 import './Chart.css';
 import { Chart } from "react-google-charts";
 import ApiCall from "../config/api";
+import React, { useEffect, useState } from "react";
+import axios from "../axios"
 
 
 export const data = [
@@ -21,15 +22,33 @@ export const options = {
 };
 
 function Report() {
+  const [ngodata, setngodata] = useState([]);
   const{getapi,isLoading,result}=ApiCall();
-  getapi("https://dog.ceo/api/breeds/image/random");
-  console.log(result)
+  getapi("http://localhost:5000/ngo/getAllNgos");
+  console.log(result.data)
+  
+  useEffect(() => {
+    axios
+      .get(`/ngo/getAllNgos`)
+      .then((res) => {
+        setngodata(res.data);
+        console.log(ngodata)
+      })
+      .catch((err) => {
+        console.log(err.status);
+      });
+  }, []);
+
+    let NGO_Feeding_Program 
+
+
+
   //result is the state
   //getAPi se you call the function eg getApi(route);
   //isLoading is a state(boolean) true=data load nahi hua, false=data load hogaya
   //you can add the isloading state in the UI to make it thoda responsive, also will look nice to the mentor
   return (
-    <div style={{margin: "auto"}}>
+    <div>
     <Chart
       style={{marginBottom: "2%"}}
       div="c1"
