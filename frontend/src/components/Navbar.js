@@ -5,7 +5,7 @@ import Logo from '../images/logo.png'
 
 function NavBar() {
   const [click, setClick] = useState(false);
-  
+
 
   const handleClick = () => setClick(!click);
   return (
@@ -41,7 +41,7 @@ function NavBar() {
                 Report Page
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 exact
                 to="/about"
@@ -51,8 +51,8 @@ function NavBar() {
               >
                 About
               </NavLink>
-            </li>
-            <li className="nav-item">
+            </li> */}
+            {/* <li className="nav-item">
               <NavLink
                 exact
                 to="/contact"
@@ -62,8 +62,8 @@ function NavBar() {
               >
                 Contact Us
               </NavLink>
-            </li>
-            <li className="nav-item">
+            </li> */}
+            {/* <li className="nav-item">
               <NavLink
                 exact
                 to="/contact"
@@ -74,7 +74,7 @@ function NavBar() {
                 Logout
                 <i className="fas fa-sign-out"></i>
               </NavLink>
-            </li>
+            </li> */}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"}></i>

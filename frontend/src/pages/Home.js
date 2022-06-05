@@ -1,9 +1,27 @@
-import React from "react";
+// import React from "react";
+// import Card from "../components/card";
+// import Caraousel from "../components/carousel";
 
-export const Home = () => {
+// export const Home = () => {
+//   return (
+//     <div>
+//       <Caraousel></Caraousel>
+//       <Card></Card>
+//     </div>
+//   );
+// };
+
+import React from 'react'
+import Card from '../components/card'
+import Caraousel from '../components/carousel'
+
+function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <Caraousel></Caraousel>
+      <Card></Card>
     </div>
-  );
-};
+  )
+}
+
+export default Home
