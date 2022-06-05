@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import ReactTable from 'react-table';
-
-const TablePage = (props) => {
+import ApiCall from "../config/api";
+import axios from "../axios"
+const TablePage = (props) => {   
   const data_people = {
     columns: [
       {
