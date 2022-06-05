@@ -11,8 +11,8 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import "./Register.css";
+// import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 import axios from "../axios";
 
 function Register() {
@@ -77,6 +77,11 @@ function Register() {
         localStorage.setItem("token", res.headers["x-auth-token"]);
         // history("/owner");
         // navigate("/");
+        if (vals.userType === "ngo") {
+          navigate("/form", { replace: true });
+        }
+         navigate("/login", { replace: true });
+
       });
     }
   };

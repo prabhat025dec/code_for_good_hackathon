@@ -9,9 +9,11 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import axios from "../axios";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 function Login() {
+  let navigate = useNavigate();
   let initVals = {
     userEmail: "",
     userPhone: "",
@@ -46,7 +48,12 @@ function Login() {
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data);
-        <Navigate to="/" replace={true} />;
+        if (vals.userType === "ngo") {
+          navigate("/form", { replace: true });
+        }
+        else {
+          navigate("/report", { replace: true });
+        }
       })
       .catch((err) => {
         seterr("Invalid Email-Id or Password");
@@ -100,7 +107,7 @@ function Login() {
             label="Type of User"
             onChange={handleChangeType}
           >
-            <MenuItem value="NGO">NGO</MenuItem>
+            <MenuItem value="ngo">NGO</MenuItem>
             <MenuItem value="admin">Admin</MenuItem>
             {/* <MenuItem value={30}>Thirty</MenuItem> */}
           </Select>
