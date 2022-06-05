@@ -24,21 +24,21 @@ export const options = {
 function Report() {
   const [ngodata, setngodata] = useState([]);
   const{getapi,isLoading,result}=ApiCall();
-  getapi("http://localhost:5000/ngo/getAllNgos");
+  // getapi("http://localhost:5000/ngo/getAllNgos");
   //console.log(result[0][1].data)
-  console.log(setngodata)
-  useEffect(() => {
-    axios
-      .get(`/ngo/getAllNgos`)
-      .then((res) => {
-        setngodata(res.data);
-        console.log(ngodata)
-        console.log(res.data.length)
-      })
-      .catch((err) => {
-        console.log(err.status);
-      });
-  }, [ngodata]);
+  // console.log(setngodata)
+  // useEffect(() => {
+  //   axios
+  //     .get(`/ngo/getAllNgos`)
+  //     .then((res) => {
+  //       setngodata(res.data);
+  //       console.log(ngodata)
+  //       console.log(res.data.length)
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.status);
+  //     });
+  // }, [ngodata]);
 
   let NGO_Feeding_ProgramB18 = 0;
   let Breakfast_Feeding_ProgramB18 = 0;
