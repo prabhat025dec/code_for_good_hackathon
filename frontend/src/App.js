@@ -11,7 +11,10 @@ import ReportPage from "./pages/ReportPage";
 import NavBar from "./components/Navbar";
 import NGODataRegistration from "./pages/NGODataRegistration"
 import Login from "./components/Login";
+
 import Register from "./components/Register";
+
+
 
 function App() {
   return (
@@ -33,6 +36,17 @@ function App() {
       </Router>
     </>
   );
+{/* <div className="App" style={{ background: "linear-gradient(#e66465, #9198e5)" }}>
+<h2 style={{align:"center", color:"white", paddingTop:"2%"}}>Dashboard</h2> */}
+{/* <Report /> 
+<PieChart1 />
+<Calendar1 />
+<LineChart />
+<LineChart1 />
+<LineChart3 />
+<LineChart4 /> */}
+// </div>
+  
 }
 
     
